@@ -1,0 +1,1718 @@
+print("학과:", "컴퓨터공학")
+print("학번:", 2022)    콤마가 공백을 줌
+print("학과:{}".format("컴퓨터공학")) "학과:{}" 문자열=객체는 함수와 변수를 가지고 있고 그것을 이용하기 위해 .을 이용
+print("학과:{}, 학번: {}".format("컴퓨터공학",2022))
+print("학과:{0}, 학번; {1}".format("컴퓨터공학",2022))
+print("학과: {0}, 전공: {0}, 학번: {1}".format("컴퓨터공학", 2022))
+print("학과: %s"%("컴퓨터공학"))
+print("학과: %s"%"컴퓨터공학")   하나일때.
+print("학과: %s, 학번: %s" %("컴퓨터공학", 2022))   2022는 문자열로 인식.
+print("학과: %10s, 학번: %8d" %("컴퓨터공학", 2022))   10자리 8자리 확보
+print("학과: %2s, 학번: %2d" %("컴퓨터공학", 2022))    2자리 지만 다 출력됨!
+print("학과: "+"컴퓨터공학")
+print("학과: "+"컴퓨터공학, "+"학번: "+str(2022)) 정수나 실수를 문자열로 바꾸기.
+
+
+	
+*출력형태 추가정리====================
+%사용
+=>%f 사용
+=>print("%.2f"%(3.7452)) ==> 3.75
+, 사용
+format함수
++ 사용
+=>소수점 제한 시: round()함수 사용 ex)round(3.7452, 2) ==> 3.75
+=>round함수는 ,(콤마), format, +에서 사용
+
+실수값에서 소수점 없이 출력하고자 할때
+%.0f   반올림 됨. 소수점 이하 안나옴
+int()함수 사용, 단 반올림 안됨 소수점 이하 버림.
+ㄴ %.0f 랑 int() 는 최대 1 차이!!
+round(실수값, 0) => .0이 같이 출력!! 반올림 됨
+
+print("%d"%(3.7452)) 3
+print("%s"%(3.7452)) 3.7452
+print("%f"%(3.7452)) 3.745200
+print("%.2f"%(3.7452)) 3.75
+print("%.3f"%(3.7452)) 3.745
+print("%.0f"%(3.7452)) 4 
+print("{}".format(3.7452)) 3.7452
+print("{}".format(round(3.7452, 2))) 3.75
+print("{}".format(int(3.7452, 2))) 3
+print("{}".format(round(3.7452, 0))) 4.0
+
+pencil=1000
+pen=2000
+num_pencil=int(input("연필구입개수: "))
+num_pen=int(input("펜구입개수: "))
+total_price=pencil*num_pencil+ pen*num_pen
+
+print("총가격은", total_price, "원 입니다.") 총 가격은 59000 원 입니다.
+print("총 가격은 {}원 입니다."format(total_price)) 총 가격은 59000원 입니다.
+print("총 가격은 %s원 입니다."%(total_price)) 총 가격은 59000원 입니다.
+print("총 가격은 "+str(total_price)+"원 입니다.") 총 가격은 59000원 입니다.
+
+문제) 다음 조건에 맞도록 프로그램을 작성하시오.
+-사무용품점에서 토너 1개, A4용지 1묶음, 클립 1통을 샀다.
+-토너는 2만 3천원, A4용지는 만7천원, 클립은 2천원이 들었다.
+-총 구입 비용이 얼마인지 계산하여 출력하시오.
+-변수를 사용해야 하며, 출력형태 4가지 모두를 이용하여 출력해보시오.
+
+toner=23000
+A4=17000
+clip=2000
+toner, A4, clip= 23000, 17000, 2000 
+num_toner=int(input("토너개수: "))
+num_A4=int(input("A4 개수: "))
+num_clip=int(input("클립 개수: "))
+
+price=toner*num_toner+A4*num_A4+clip*num_clip
+print("가격은 {}원 입니다.".format(price))
+print("가격은 %s원 입니다."%(price))
+print("가격은 " +str(price)+"원 입니다."
+print("가격은", price ,"원 입니다.")
+
+문제) 프로그램 작성
+두 정수를 입력받는다(두번째 정수는 0을 입력하지 않도록 한다.)
+첫번째 정수를 두번째 정수로 나눈 실수몫을 구하여 출력하는데 계산과정도 출력되도록 한다. 
+소수점은 둘째자리까지 출력되도록 한다. 
+첫번째 정수를 두번째 정수로 나눈 나머지를 구하여 출력하는데 계산 과정도 출력되도록 한다. 
+4가지 출력형태를 모두 이용하여 출력해본다. 
+
+num1=int(input("입력1: "))
+num2=int(input("입력2: "))
+
+num1, num2=input("수 2개 입력: ").split (" ") 
+num1, num2=int( input("수 2개 입력: ").split (" ") ) 는 안됨!
+문자열=객체=split이라는 함수 가지고 있다. split 괄호 안: <구분자>
+문자열로 저장됨!!!!
+num1, num2=int(num1), int(num2)
+
+num1, num2=input("수 2개 입력: ").split (",")
+입력할때 23, 3 (공백 있어도 괜츈)
+
+
+print(num1, "/", num2, "=", round(num1/num2, 2))
+print(num1, "%", num2, "=", num1%num2)
+print(str(num1)+" / "+str(num2)+" = "+str(round(num1/num2, 2)))
+print(str(num1)+" % "+str(num2)+" = "+str(num1%num2))
+print("{} / {} = {}".format(num1, num2, round(num1/num2, 2)))
+print("{} % {} = {}".format(num1, num2, num1%num2))
+print("%s / %s = %.2f"%(num1, num2, num1/num2))
+print("%s %% %s = %s"%(num1, num2, num1%num2))
+
+문제)
+수 2개를 입력하여 변수에 저장
+두 변수 값을 교환
+더 큰 값(최댓값)과 더 작은값 (최솟값)을 각각 출력한다. 
+
+num1, num2=input("2개 입력: ").split(" ")
+num1, num2 = int(num1), int(num2)
+
+print("교환 전: ", end="") 자동 줄바꾸 없앰 end="" 로.
+print("num1:", num1, "num2:",num2) 줄바꿈 자동
+temp=num1
+num1=num2
+num2=temp
+
+print("교환 후: ", end="")
+print("num1:", num1, "num2:", num2)
+print("큰 값:", max(num1, num2), "작은 값:", min(num1, num2))
+
+문제) 다음 조건에 맞도록 Boolean 식을 구성하시오.
+학점이 3.5 미만이고 학년이 2학년 이상
+상품이 참기름이고 받은 횟수가 0이 아닌 경우
+점수가 210점 이상이거나 과목을 pass한 경우
+grade <3.5 and year >=2
+product =="참기름" and cnt!=0
+score >=210 or obj=="pass"
+
+random 정리===================
+import random #random을 사용하기 위해 반드시 작성
+변수=random.randint(start, end) #start~end 사이의 수들 중 랜덤값 하나를 반환(start, end 포함, start보다 end값이 더 커야함)
+변수=random.randrange(stop) #0~stop-1 사이의 수들 중 랜덤값 하나를 반환(stop은 포함 안됨)
+변수=random.randrange(start, stop) #start~stop-1 사이의 수들 중 랜덤값 하나를 반환
+변수=random.randrange(start, stop, step) #start~stop-1 사이의 수들이 step만큼씩 떨어져 있는 수들이며 이들 중 랜덤값 하나를 반환
+
+import random
+coin= random.randint(0,1)
+random.randrange(2)
+random.randrange(0,2)
+random.randrange(0,2,1)
+
+문제) 인턴들이 정규직
+85점 이상이면 정규직 전환
+
+num=int(input("입력: "))
+if num>=85:
+    print("축하합니다.")   <-자동으로 줄바꿈됨.
+    print("%s점으로 정규직 전환"%(num))
+else:
+    print("%s점으로 실패"%(num))
+
+추가) 점수는 랜덤으로 결정되도록 한다. (60~100)
+import random
+num=random.randint(60,100)
+random.randrange(60,101)
+random.randrange(60,101,1)
+
+if height<=155 and weight <= 50: 
+
+문제) 
+주식투자를 한 후 이윤이 10%이상이거나 이윤에 상관없이 번 금액이 500만원 이상일 경우 잘 투자했다고 판단
+이익률(%)과 수익금(만원단위)를 각각 입력받고 주식이 잘 투자한 것이 맞는지 확인하는 프로그램 작성
+
+profit_percentage=int(input("이익률 입력(%): "))
+profit_money=int(input("수익금(만원단위) 입력: "))
+if profit_percentage >=10 or profit_money>=500:
+    print("잘 투자함")
+else
+    print("못함")
+
+문제)
+국가에서 치르는 자격증이 있는데 총 3과목을 시험봐야 한다. 
+합격을 위해서는 각 과목의 점수가 60점 이상이거나 평균이 70점 이상이 되어야 한다. 
+3과목에 대한 점수를 입력받고 합격인지 불합격인지 출력하는 프로그램
+
+a, b, c=input("입력: ").split(" ")
+a, b, c = int(a), int(b), int(c)
+avg=(a+b+c)/3
+if (a>=60 and b>=60 and c>=60) or avg>=70: 
+    print("합격")
+else:
+    print("불합격")
+
+문제) 다음 조건에 맞도록 프로그램을 작성하시오
+- 문자열을 하나 입력받고 입력한 문자열 길이에 따라 출력 모습이 변경되도록 한다. 
+- 문자열 길이가 8글자 이상이 되면 길이만큼 라인별로 출력하고, 그렇지 않으면 한 라인에 문자열이 출력되도록 한다. 
+- 단, 한 라인에 출력될 때는 문자열 사이에 공백이 들어가도록 한다. 
+출력 예)
+문자열 입력: str
+str str str
+문자열 입력 string12
+string12
+string12
+string12
+..
+
+a=input("입력: ")
+if len(a)>=8:
+    print((a+"\n")*len(a))
+else:
+    print((a+" ") * len(a))
+
+문제)
+랜덤을 수를 하나 결정한다.(1~10 사이의 수)
+결정된 수가 3 또는 7인지 확인하고 맞다면 성공, 아니면 실패를 출력한다.
+
+import random
+a=random.randint(1, 10)
+if a==3 or a==7:  
+    print("%s(으)로 성공"%(num))
+else:
+    print("%s(으)로 실패"%(num))
+
+(a==3 or 7 이런식으로 하면 안됨)
+0: 거짓
+0이외의 값: 참
+7때문에 무조건 참 됨.
+
+eng = int(input("영어 점수 입력: "))
+math = int(input("수학 점수 입력: "))
+
+if (math>=90) and (eng>=80):
+    print ("합격입니다.")
+else:
+    print("불합격입니다.")
+    if math < 90 : 
+        print("수학점수가 90점 미만이어서 불합격입니다.")
+    elif 
+
+if math>=90:
+    if eng >=80: 
+        print("합격입니다.")
+    else:
+        print("영어점수가 80점 미만이어서 불합격입니다.")
+else: 
+    print("수학점수가 90점 미만이어서 불합격입니다. ")
+
+if math<90:
+    print("수학점수가 90점 미만이어서 불합격")
+else:
+    if eng<80:
+    	print("영어 점수가 80점 미만이어서 불합격")
+    else:
+	print("합격")
+
+
+input_id=input("id 입력: ")
+if len(input_id) <=10:
+    input_pw=input("pw 입력: ")
+    if len(input_pw)<=10:
+	print("회원가입 성공")
+    else:
+	print("회원가입 실패: 패스워드 길이가 10을 초과")
+else:
+    print("회원가입 실패: 아이디 길이가 10을 초과")
+
+
+origin_id="123"
+origin_pw=123
+input_id= input("id 입력: ")
+
+if input_id!=origin_id:
+    print("로그인 실패 : 아이디 오류")
+else : 
+    input_pw=int(Input("password 입력: "))
+    if input_pw != origin_pw:
+        print("로그인 실패: 패스워드 오류")
+    else:
+        print("로그인 성공")
+
+if input_id==origin_id:
+    input_pw=int(input("password 입력: "))
+    if input_pw == origin_pw:
+        print("로그인 성공")
+    else:
+        print("로그인 실패: 패스워드 오류")
+else: 
+    print("로그인 실패: 아이디 오류")
+
+
+num1=int(input("num1 입력: "))
+num2=int(input("num2 입력: "))
+if num1>0:
+	if num2>0:
+ 		print("양수")
+	else:
+		print("음수")
+else:
+	if num2>0:
+		print("음수")
+	else:
+		print("양수")
+
+
+false next
+true true st1 next
+true false st2 next
+if 조건1==true
+	if 조건2==true
+		Statement1
+	else
+		Statement2
+
+
+score = int(input("점수입력: "))
+if score>=90:
+	print("A")
+elif score>=80:
+	print("B")
+elif score >=70:
+	print("C")
+else:
+	print("D")
+
+
+score = int(input("점수입력: "))
+if score>=80:
+	print("B")
+elif score>=90:
+	print("A")
+elif score >=70:
+	print("C")
+else:
+	print("D")
+--> 95 쓰면 B 나옴!
+
+
+score = int(input("점수입력: "))
+if score>=80 and score<=89: #if 80<= score <=89:
+	print("B")
+elif score>=90:
+	print("A")
+elif score >=70:
+	print("C")
+else:
+	print("D")
+
+
+math=int(input("수학점수 입력: "))
+eng=int(input("영어점수 입력: "))
+
+if math>=90 and eng>=80:
+	print("합격")
+else:
+	if math<90:
+		print("불합격: 수학점수 부족")
+	elif eng<80:
+		print("불합격: 영어점수 부족")
+
+
+age=int(input("나이 입력: "))
+
+if age>=20:
+	print("성인")
+elif age >=10 (and age <20): #elif 10<=age<20:
+	print("청소년")
+else:
+	print("아동")
+
+if age >=10 and age <20:
+	print("청소년")
+if age>=20:
+	print("성인")
+else:
+	print("아동")
+
+num=int(input("채널 번호 입력: "))
+if num==5:
+	print("SBS")
+elif num==7 or num==9: #num==7 or 9(무조건 참) 이렇게는 안됨. #0이외의 값은 무조건 참.
+	print("KBS")
+elif num==11:
+	print("MBC")
+elif num==13:
+	print("EBS")
+else:
+	print("채널없음")
+
+eng=int(input("영어 점수 입력: "))
+math=int(input("수학 점수 입력: "))
+
+total=eng+math
+if total <110:
+	print("불합격: 총합 점수가 부족")
+else:
+	if eng>=40:
+		if math>=40:
+			print("합격")
+		else:
+			print("수학점수 부족")
+	else
+		print("영어점수 부족")
+
+if total>=110:
+	if eng>=40 and math>=40:
+		print("합격")
+	elif eng<40:
+		print("영어점수 부족")
+ 	elif math<40:
+		print("수학점수 부족")
+else:
+	print("총합점수 부족")
+
+문제)
+영어 수학 랜덤
+합이 110점 이상 영어 수학 40점 이상 합격
+합격 불합격 출력
+
+import random
+math=random.randint(30,100)
+eng=random.randint(30,100)
+
+print("영어: {}, 수학: {}".format(eng, math))
+total=eng+math
+if total>=110:
+	if eng>=40 and math>=40:
+		print("합격")
+	elif eng<40:
+		print("영어점수 부족")
+ 	elif math<40:
+		print("수학점수 부족")
+else:
+	print("총합점수 부족")
+
+문제)
+실습 6-2를 수정하시오.
+점수는 0~100점 사이로 제한하며 잘못 입력한 경우 점수가 잘못되었다고 출력
+
+score = int(input("점수입력: "))
+if score>=90 and score<=100:
+	print("A")
+elif 89>=score>=80:
+	print("B")
+elif 79>=score >=70:
+	print("C")
+else 69>=score >=0:
+	print("D")
+else:
+	print("잘못입력")
+
+
+문제)
+키보드 구매 개수를 입력 받는다. 키보드 하나의 가격은 8500원이다. 
+키보드를 5개 이상 10개 미만으로 사면 5% 할인, 10개 이상 20개 미만인 경우 10% 할인, 20개 이상 30개 미만인 경우 15% 할인, 30개 이상 20% 할인을 받는다고 한다. 
+단 구매 개수는 50개를 초과할 수 없다. 
+음수 입력해도 동작(-5는 5 의미)
+출력은 총 금액 및 에러메세지를 출력.
+
+num=int(input("입력: "))
+if num<0:
+	num= -num
+if 5>num>=0:
+	price:8500*num
+	print("%s"%(price))
+elif 10>num>=5:
+	price=8500*num*0.95
+elif 20>num>=10:
+	price=8500*num*0.9
+elif 30>num>=20:
+	price=8500*num*0.85
+elif 50>=num>=30:
+	price=8500*num*0.8
+elif num>50:
+	print("잘못 입력")
+
+교수님 정답
+keyb=8500
+num=int(input("키보드 구매 개수 입력: "))
+if num<0:
+	num= -num
+
+if num<=50:
+	price=num*keyb
+	if 10>num>=5:
+		price*=0.95
+	elif 20>num>=10:
+		price*=0.9
+	elif 30>num>=20:
+		price*=0.85
+	elif 50>=num>=30:
+		price*=0.8
+	print("총 구매 금액은 {}원".format(int(total_price)))
+else:
+	print("50개 초과 안됨")
+
+문제)
+백화점에서 한달 동안 이벤트 행사를 하고 있다. 구매 고객별로 포인트 적립을 다르게 한다.
+일반회원인 경우 구매금액의 10%, 프리미엄 회원 중에서 골드 회원은 20% 실버 회원은 15%를 포인트로 적립해준다. 
+
+회원의 종류와 구매 금액을 입력한 후 적립받을 수 있는 포인트가 얼마나 되는지 알고자 한다. 
+회원은 일반과 프리미엄 중 입력해야 하며 프리미엄의 경우 골드와 실버 중 하나를 입력해야 한다. 
+잘못 입력한 경우 에러메세지를 출력한다. 
+
+amount = int(input("구매 금액 입력: "))
+member = input("회원 종류 입력(일반/프리미엄): ")
+
+if member == "프리미엄":
+    mem2 = input("골드 or 실버 중 입력: ")
+    if mem2 == "골드":
+        print("%s 포인트 적립됨"%(int(amount*0.2)))
+    elif mem2 == "실버":
+        print("%s 포인트 적립됨"%(int(amount*0.15)))
+    else:
+        print("잘못 입력하였습니다.")
+elif member == "일반":
+    print("%s 포인트 적립됨"%(int(amount*0.1)))
+else:
+    print("회원 종류를 잘못 입력하였습니다.")
+
+------------------------기말----------------------
+list1=[["이수지", 9], ["박상민", "하누리"], [5, 301, 714], 3.14, True]
+
+print(len(list1))  5
+print(len(list1[0]))  2
+print(len(list1[2]))  3
+print(len(list1[1][0]))  3  (문자열)
+print(list1[0])  ['이수지', 9]
+print(list1[2]) [5, 301, 714]
+print(list1[3]) 3.14
+print(list1[4]) True
+print(list1[0][0]) 이수지
+print(list1[0][0][0]) 이
+
+list1=["python", 9, ["test", "string2"], [301, 714], 3.14, True]
+print(list1[2][0])  test
+print(list1[3])  [301, 714]
+print(list1[2][1][-1]) print(list1[2][1][6]) 2
+print(len(list1))  6
+print(len(list1[2][1])) 7
+
+list1=["risk", "issue", "test", "maintenance", "maturity"] 5개
+list2=[]  5개
+list3=[] 3개
+요소가 최소 5개이고 maintenance 가 들어있는 리스트 고르기
+
+if "maintenance" in list1 and len(list1)>=5:
+	print("리스트 사용 가능")
+elif "maintenance" in list2 and len(list2)>=5:
+	print("리스트 사용 가능")
+elif "maintenance" in list3 and len(list3)>=5:
+	print("리스트 사용 가능")
+else:
+	print("다 불가능")
+
+list1=['a', 'b', ['c', 'd'],1, [2,3], 'e']
+len(list1)   6
+['b'] in list1   False!!!!!!!!!!중요!!!!!!
+['c', 'd'] in list1     True
+'a' in list1      True
+
++ 용도: 덧셈, 문자열 연결, 리스트 병합
+피연산자: 모두 숫자, 문자열, 리스트
+*용도: 문자열 반복 , 리스트 반복
+
+list_odd=[1,3,5,7,9]
+list_even=[2,4,6,8,10]
+list_odd[-3]   5
+list_even[10]	10
+list_odd+list_even	[1,3,5,7,9,2,4,6,8,10]
+list_odd*2 	[1,3,5,7,9,1,3,5,7,8]
+인덱스 = 순서가 있다
+newlist=odd+even
+newlist2=even+odd
+순서가 다르면 달라진다.
+print(odd[0:1])	[1]
+print(odd[0])	1
+만약 even[[2],4,6,8,10]이라면
+even[0]	[2]
+even[0:1]		[[2]]
+
+
+list 슬라이스의 결과는 리스트이다...
+spell=["h", "a", "n", "d", "i", "c", "r", "a", "f", "t"]
+spell[1:5]
+['a', 'n', 'd', 'i']
+spell[:]
+['h', 'a', ... , 't']
+spell[9:]
+['t'] ('t' 안돼요.)
+spell[:2]+spell[9:]
+['h', 'a', 't']
+
+문자열은 상수기 때문에 요소를 교체할 수 없다.
+리스트는 가능
+
+spell=["m", "a", "r", "c", "h"]
+spell[1:3]=["u", "l"] 		mulch
+spell[1:]=["a","r","s"]  길이가 달라도 교체 가능 	['m','a','r','s']
+spell[:3]=["v","e","n","u"]	venus
+spell[:1]=["v","w"]	vwenus
+spellp[0]=["q", "e"]	[['q', 'e'], 'w', 'e', 'n', 'u', 's']
+
+re=["r", "e"]
+serve=["s","e","r","v","e"]
+reserve=re+serve
+reserve[:2]=["o","b"]
+
+시퀀스(형) 여러 원소가 순서가 있게 나열된 것
+문자열, 리스트
+ㅡㅡㅡ in 시퀀스
+
+*리스트 정리
+* 리스트 생성
+1 공백리스트 생성 2 요소추가
+1 요소들을 리스트로 표현해서 생성
+리스트= []: 공백 리스트 생성
+리스트=[요소1, 요소2, 요소3, ...] 요소들을 쉼표로 나열하여 생성
+리스트=list(), 공백 리스트 생성, list() 함수는 다른 시퀀스를 리스트로 변경 가능(요소 추가시 인덱스 사용 X, 밑에 함수 사용!)
+
+*리스트에 요소 추가(함수)
+리스트.append(요소) : 요소를 리스트 마지막에 추가
+리스트.insert(인덱스, 요소): 요소를 인덱스 위치에 삽입(추가)
+리스트.extend(리스트2): 리스트 마지막에 리스트2 요소들이 추가
++: 두 리스트를 더하여 새로운 리스트 생성
+주의: 피연산자 모두 리스트여야 함.
++: 덧셈, 문자열연결, 리스트병합
+
+
+list1=[]
+list2=[10, 20, 30, 40, 50]
+list3=list()
+print(list1, list2, list3)
+
+#list1[0]="가" #요소를 추가하는 것이 아니라 해당 위치의 요소값을 변경
+-> 오류 index out of range 나옴(아마 공백리스트라서.)
+list1.append("가")
+list1.append("나")
+list1.insert(1,"다")
+print(list1)		['가', '다', '나']
+list2.append(5)
+list2.insert(0,1)
+print(list2)		[1, 10, 20, 30, 40, 50, 5]
+list3.extend(list2)
+list3.extend(list1)
+print(list3) 	[1, 10, 20, 30, 40, 50, 5, '가', '다', '나']
+
+*리스트 슬라이싱: 문자열 슬라이싱과 동일
+*리스트 요소 수정(변경): 인덱스와 대입연산자 사용
+주의: 슬라이싱(범위) 로 지정하면 해당 범위의 요소들이 변경되고, 인덱스로 하면 요소값이 변경
+슬라이싱 결과는 리스트임을 주의
+
+*리스트 요소 삭제
+리스트.remove(요소) :리스트 요소를 찾아 삭제(단, 동일한 것이 있더라도 첫번째만 삭제하고 없으면 에러남)
+del 리스트[인덱스]: 인덱스에 해당하는 요소를 삭제, del(리스트[인덱스])와 같이 함수 형태로도 사용 가능.
+del 리스트[인덱스1:인덱스2]: 두 인덱스 (인덱스1~(인덱스2)-1) 사이에 있는 요소들 삭제
+리스트.pop(): 리스트의 마지막 요소를 반환하면서 삭제
+리스트.pop(인덱스): 인덱스에 해당하는 요소를 반환하면서 삭제
+리스트.clear(): 리스트의 모든 요소를 삭제, del 리스트[:]
+주의: del 리스트라고 하면 리스트 변수 자체가 소멸
+
+list1=[10, 20, 30, 10, 30, 10, 50, 60]
+list1.remove(10)
+print(list1)		[20, 30, 10, 30, 10, 50, 60]
+list1.remove(70)	ValueError: list.remove(x) x not in list
+에러 안내려면 아래처럼 사용해야됨
+if 70 in list1: 
+	list1.remove(70)
+del list1[3]
+print(list1) 	[20, 30, 10, 10, 50, 60]
+del(list1[2])
+print(list1)		[20, 30, 10, 50, 60]
+del list1[1:3]
+print(list1)		[20, 50, 60]
+print(list1.pop())	60
+list1.pop() 만 쓰면 반환은 하지만 자동 출력되지는 않음.
+print(list1)		[20, 50]
+print(list1.pop(0))	20
+print(list1)		[50]
+list2=[10, 20, 30, 10, 30, 10, 50, 60]
+list2.clear()
+del list2[:]
+print(list2)		[]
+del list2
+print(list2) 	NameError: name 'list2' is not defined(리스트2 소멸)
+
+
+문제)
+-오늘의 할일 3개를 입력받아 리스트로 만들고 출력하기
+-할일 하나를 더 입력받되 우선 순위를 2번째로 만든다. 
+-오늘의 할 일 리스트를 새로 만들고 처음 만들었던 리스트(입력해서 만든 리스트)와 연결하고 출력한다. (새로 만드는 리스트는 입력받지 말고 미리 만들어 놓고 사용할 것)
+
+list1=[]
+a=input("오늘의 할일:")
+list1.append(a)
+a=input("오늘의 할일:")
+list1.append(a)
+a=input("오늘의 할일:")
+list1.append(a)
+print(list1)
+a=("오늘의 할일: ")
+list1.insert(1, a)
+print(list1)
+list2=["노래 연습", "메일", "공과금납부"]
+list1.extend(list2)
+print(list1)
+# list1 뒤에 list2 가 온다는 것 기억!
+
+문제)
+사고자하는 품목 리스트를 생성한다. (8개 이상)
+ex) 컵라면, 껌, 참치캔, 가방, 볼펜, 샤프심, 양말, 마우스
+키보드로 구매한 품목을 하나 입력받고 리스트에 있으면 삭제한 후 품목 리스트를 출력한다. 
+해당 품목이 없으면 적절한 에러 메시지를 출력한다. 
+키보드로 인덱스 번호를 하나 입력받고, 입력한 인덱스에 해당하는 요소를 삭제하고 품목 리스트를 출력한다. 
+인덱스를 잘못 입력한 경우 적절한 에러메시지를 출력한다. 
+리스트 전체를 삭제하고 출력한다. (변수를 소멸시키지는 않는다.)
+list=["컵라면", "껌", "참치캔", "가방", "볼펜", "샤프심", "양말", "마우스"]
+item=input("입력: ")
+if item in list:
+	list.remove(item)
+	print("{} 품목이 삭제되었습니다.".format(item))
+else:
+	print("{}품목은 구매 예정 리스트에 없습니다.".format(item))
+
+item_num=int(input("입력 인덱스:"))
+if 0<= item_num<len(list):
+	print("{}품목이 삭제되었습니다.".format(list[item_num])
+	del list[item_num]
+	#print("{}품목이 삭제되었습니다."format(list.pop(item_num)))
+else:
+	print("해당 인덱스 없습니다.")
+list.clear()
+#del list[:]
+print(list)
+
+*리스트 탐색============================
+-list.index(요소): 요소가 몇번 인덱스에 있는지 인덱스 값 반환 (동일한 요소가 있더라도 첫번째 찾은 요소의 인덱스만 반환), 해당 요소가 없으면 에러
+-list.index(요소, start, end): start~end-1 사이의 위치에서 해당 요소를 찾아 인덱스 위치 반환
+--------------------------------------------------------------
+문제)
+좋아하는 과일을 순서대로 저장한 리스트를 작성한다. (과일 요소 5개 이상이 되도록 작성) 
+키보드로 과일을 하나 입력받고 몇번째에 있는지 출력한다. 
+입력한 과일이 리스트에 없다면 해당 과일이 없다고 출력한다. 
+
+list=["체리", "딸기", "자두", "복숭아", "귤", "딸기"]
+fruit=input("과일 입력:")
+if fruit in list:
+	print("%s번째에 있습니다."%(list.index(fruit)+1))
+else:
+	print("없습니다.")
+if fruit in list:
+	print("%s번째에 있습니다."%(list.index(fruit, 2, 6)+1))	체리 넣으면 에러남.
+else:
+	print("없습니다.")
+if fruit in list[2:]:
+	print("%s번째에 있습니다."%(list.index(fruit, 2, 6)+1))	체리 넣어도 에러안남.
+else:
+	print("없습니다.")
+
+
+*리스트 정렬================================
+-리스트.sort() : 정렬하는데 사용, 원본 리스트를 변경, 오름차순 정렬
+-리스트.sort(reverse=True): 내림차순 정렬
+-리스트.reverse(): 리스트의 요소 순서를 역순으로 변경, 정렬이 아님을 주의, 원본 리스트를 변경
+-원본리스트를 남겨두고 정렬된 새로운 리스트가 필요한 경우 sorted(리스트) 사용 오름차순.
+ex) list2=list1.sorted() (X)	list2=sorted(list1) (O)
+-내림차순으로 정렬하려면 sorted(리스트, reverse=True) 사용
+-리스트.sort() 한 후 리스트.reverse()를 해도 내림차순 정렬이 가능
+----------------------------------------------------
+*리스트의 요소 개수 세기 =====================
+-리스트.count(요소) : 리스트 내에 있는 요소들 중 해당 요소 개수를 반환
+------------------------------------------------------
+*리스트 복사=======================
+-리스트2 = 리스트.copy(): 동일 내용으로 새로운 리스트를 생성(복사)
+-리스트2 = 리스트 + []
+-리스트2=리스트[:] (전체 슬라이싱)
+위 애들은 새로운 리스트에 새로운 이름을 생성 (새로운 메모리 위치)
+주의: 리스트2 = 리스트 : 기존 리스트에 새로운 이름을 생성(똑같은 메모리 위치), 이름(변수명) 하나 더 추가, 따라서 리스트2 값 변경하면 리스트도 변경됨!!!!!!!!!!!!!!!(중요)
+
+*Random 추가정리 ===============================
+import random
+변수=random.choice(리스트) : 리스트에 있는 요소들 중에 랜덤으로 하나의 요소를 반환
+random.shuffle(리스트): 리스트에 있는 요소들의 순서를 섞어줌. 원본 리스트 변경
+변수=random.sample(리스트, 개수): 리스트에 있는 요소들 중 랜덤으로 개수만큼 추출하여 <리스트>로 반환 ( 중복이 없음), 개수 입력 시 리스트의 총 개수를 초과할 수 없음.(Sample larger than population or is negative)(개수 입력 음수도 안됨.)
+list1=[1,2,3,4,5]
+list2=random.sample(list1,1)
+print(list2)		[3] 리스트로나옴.
+-------------------------------------------------------------------------------
+문제)
+-포춘쿠키엔 happy, love, sad, hot, angry, fortunate 중 하나가 들어있다.
+-랜덤으로 포춘쿠키에 있는 메시지를 하나 출력한다. 
+list=["happy", "love", "sad", "hot", "angry", "fortunate"]
+a=random.sample(list, 1)
+print("오늘은 \"{}\" 입니다.".format(random.choice(list)))
+print("오늘은 \"{}\" 입니다.".format(random.sample(list,2)))	오늘은 "['happy', 'sad']"입니다.
+
+문제)
+-월을 하나 입력받는다.
+입력한 월의 일수가 어떻게 되는지 출력한다.
+단, 2월의 경우 년도를 추가로 입력받는다.
+입력한 년도가 윤년이면 29일 아니면 28일을 출력한다.
+윤년은 4로 나누어 떨어지고, 100으로 나누어 떨어지지 않는 해이다. 또는 400으로 나누어 떨어지는 해이다. 
+월을 잘못 입력하면 해당 월이 없다는 에러메시지를 출력한다.
+[1, 3, 5, 7, 8, 10, 12]월은 31일까지, [4,6,9,11]월은 30일까지 있음
+
+list1=[1,3,5,7,8,10,12]
+list2=[4,6,9,11]
+month=int(input("월 입력: "))
+
+if month in list1:
+	print("%s월은 31일까지 있습니다."%(month))
+elif month in list2:
+	print("%s월은 30일까지 있습니다."%(month))
+elif month==2:
+	year=int(input("년도 입력:"))
+	if (year%4==0 and year%100!=0) or (year%400==0):
+		print("%s년 2월은 29일까지 있습니다."%(year))
+	else:
+		print("%s년 2월은 28일까지 있습니다."%(year))
+else:
+	print("%s월은 없습니다."%(month))
+
+list=[] 대괄호
+tuple=() 소괄호
+ㄴ변경 불가 =, 순서 존재, element 구성
+(1,2,[1,2],('W','M')) 혼용자료형 가능
+() 공백가능
+변수로 할당하여 생성 month=('Jan', 'Feb')
+list로부터 tuple 생성 가능
+
+tu1=(1,2)		(1,2)
+tu2=("one", "two")		('one','two')
+tu3=(1,[1,2],("w", "m"))	(1,[1,2],('w', 'm'))
+tu4=()	()
+tu5=tuple()	()
+tu6=tuple([1,2,3,4])	(1,2,3,4)
+print(tu1, tu2, tu3)
+print(tu4, tu5, tu6)
+
+tuple 원소(요소, 항목) 어떤 타입도 가능
+","로 원수 구분
+tu1=(1)	1 <class 'int'> 
+tu2=(2,)	(2,) <class 'tuple'>
+tu3=1	1 <class 'int'>
+tu4=2,	(2,) <class 'tuple'>
+
+tuple 은 slice 가능
+t1=("valentine", 2, 14, "gift")
+t1[1:2]	(2,)
+t1[0]	valentine
+t2[1:]	(2, 14, 'gift')
+
++: 덧셈, 문자열 연결, 리스트 병합, 튜플 병합
+*: 문자열, 리스트, 튜플
+리스트 원소 삽입 삭제 교체 수정 가능
+튜플 원소 삽입 삭제 교체 수정 불가능.-> 리스트로 바꿔준다음 튜플로 바꿔주면 수정 가능.
+
+리스트 , 튜플 공통점: 원소 구성, 시퀀스 형....
+test=("영어", "수학", "과학", "사회")
+thisyear=list(test)
+thisyear[1]="과제"
+print(thisyear)	['영어','과제','과학','사회']
+thisyear=tuple(thisyear)
+print(thisyear)	('영어','과제','과학','사회')
+
+strred="Red"
+listcolor=["Red", "Yellow", "Orange"]
+tured=tuple(strred)		('R','e','d')
+tucolor=tuple(listcolor)	('Red', 'Yellow', 'Orange')
+listred=list(strred)		['R', 'e', 'd']
+
+*Tuple 정리================================
+-변경 불가능한 자료를 사용할때 tuple 사용
+-tuple 생성시 ()와 ,(콤마)를 사용, 단, ()는 생략 가능
+-ex) tu1=1,2,3 or tu1=(1,2,3)
+-ex) tu2=1, or tu2=(1,)
+a,b,c=1 이건 안됨
+a,b,c=1,2,3 이거 됨
+a= 1,2,3 튜플됨
+-주의) 요소가 하나인 튜플을 만들 때 콤마를 사용하지 않으면 일반 값으로 인식
+-사용가능 함수: len(), max(), min(), tu1.index(), tu1.count()
+-tuple()함수를 이용하여 공백 튜플 생성 또는 리스트를 tuple로 변경 가능
+tu1=tuple() or tu1= () => 공백튜플 생성
+
+문제)
+암호에 사용 가능한 문자가 있다.(&, =, -, $, !, %)
+이 문자들은 변경하지 못한다. 
+암호 관리자는 이중 '-' 문자와 '%' 문자를 각각 '#' 문자와 '*'문자로 바꾸려 한다. 
+암호에 사용 가능한 문자를 변경하고 변경 결과를 화면에 출력하는 코드를 작성해보시오. 
+tu=("&", "=", "-", "$", "!", "%")
+tu=list(tu)
+tu[2]="#"
+tu[-1]="*"
+tu=tuple(tu)
+print(tu)		('&','=', '#', '$', '!', '*')
+
+set형 집합형
+set {} 중괄호
+list [] 대괄호
+tuple () 소괄호
+변수명={요소, 요소}
+element에는 string, tuple 등이 올 수 있다.(list는 안됨!!!!!!!!!!!!!!)
+데이터의 중복이 없다. 
+순서가 없다. => indexing이 없다. 
+
+빈 set( set()만 가능)
+{} (공백 딕셔너리 로 쓰임....)
+
+str1="hello"
+list1=[1,2,3,1,2,3]
+tu1=(1,2,3,1,2,3)
+print(set(str1))	{'h','e','o','l'}
+print(set(list1))	{1,2,3}
+print(set(tu1))	{1,2,3}
+
+교집합 &
+합집합 |
+차집합 -
+in 사용가능(튜플도 사용 가능)
+slice는 불가능(index 구조가 아님)
+
+slice 요소 제거
+fruits.remove("바나나")
+fruits.add("멜론")
+print("개수: %s"%(len(fruits)))
+
+company={"홍길동", "이수지", "박상민", "강민우", "하누리"}
+late={"홍길동", "이수지", "박상민"}
+absent={"박상민", "하누리"}
+
+bonus=company-(late | absent)
+overtime=late&absent
+bonus=company.difference(late.union(absent))
+overtime=late.intersection(absent)
+print("보너스 받을 사원 : %s" %(bonus))
+print("야근할 사원: %s"%(overtime))
+
+*set============================
+중복을 허용하지 않으며 순서가 없음(따라서 인덱싱이 안됨)
+중복을 허용하지 않기 때문에 중복값 제거에 사용하기도.
+인덱시을 하기 위해선 다른 자료형으로 변환해야함
+set 생성시 주의사항: s1={} #공백 딕셔너리
+s1=set(s1) #set형으로 변경
+s1=set() #공백 set
+사용가능 연산자: | 합집합, & 교집합, - 차집합
+사용가능 함수: len() max() min()
+s1.union(다른 집합): 합집합, s1.intersection(다른 집합): 교집합 , s1.difference(다른 집합): 차집합
+s1.add(원소): 원소 집합에 추가
+s1.remove(원소): 해당 원소 제거 ( 단 해당 원소없으면 에러)
+s1.discard(원소): 해당 원소를 제거(해당 원소가 없어도 에러는 없음)
+s1.clear() 집합의 모든 원소 제거
+
+bonus=company.difference(late.union(absent))
+overtime=late.intersection(absent)
+
+company.add("이순신")
+if "이순신" in company:
+	company.remove("이순신")
+company.discard("이순신") -> 에러안남..
+company.clear()
+
+문제)
+어느 교실 학생들의 수학 점수는 10, 9, 9, 8, 6, 10, 6, 7, 5, 8이다.
+어떤 점수를 받았는지 확인하는 코드를 작성하세요. 
+학생들이 받은 점수{5,6,7,8,9,10}
+math=[10, 9, 9, 8, 6, 10, 6, 7, 5, 8]
+math_set=set(math)
+print("학생 전체 점수:", math)
+print("학생들이 받은 점수:", math_set)
+
+문제)
+한 판매회사에서 판매실적 점수와 고객평가 점수를 통해 우수제품을 선발하려 한다.
+{"세제", "비누", "락스", "칫솔", "샴푸", "치약", "린스", "로션"}
+판매 실적 점수가 4이상인 제품은 {"비누", "칫솔", "샴푸", "치약", "로션"} 이고, 고객평가 점수가 4이상인 제품은 {"샴푸", "린스", "치약"}이다.
+판매실적 점수와 고객 평가 점수가 모두 4이상인 제품은 우수제품이 되며 두 점수 모두 4미만인 제품은 판매 중지 목록에 들어간다.
+우수제품과 판매중지제품을 출력하시오. 
+set={"세제", "비누", "락스", "칫솔", "샴푸", "치약", "린스", "로션"}
+set1={"비누", "칫솔", "샴푸", "치약", "로션"}
+set2= {"샴푸", "린스", "치약"}
+set3=set1&set2 
+=set1.intersection(set2)
+set4=set-(set1|set2)
+=set.difference(set1.union(set2))
+print("첫번째:", set3)
+print("두번째:", set4)
+
+dictionary
+단어를 통해 뜻을 구하는 경우
+{key1:value1, key2:value2,...} 중괄호
+요소가 한 쌍의 key:value로 표현.
+리스트 [] 대괄호
+튜플 () 소괄호
+set {} 중괄호 set() 공집합.
+dictionary {} 중괄호
+
+변경할 수 없는 자료형만 key 가 될 수 있다. 
+list는 key로 사용 불가능(변경 가능해서)
+tuple은 key 로 사용 가능( 변경 불가능해서)
+
+key 를 인덱스로 사용..
+key 값은 중복되면 안됨.
+하나를 제외한 나머지 key 값은 무시
+어떤 key 값이 무시될지 예측 불가능
+원소가 순서가 정해져 있지 않음.
+함수 활용 가능 list tuple set 다 가능
+d[key] = value key 와 value 쌍 추가. 변경 가능 
+del d[key] key 와 value 삭제
+d.keys() key 들로 이루어진 list 형태
+d.values() value들로 이루어진 list 형태
+d.itmes() (key, value)로 이루어진 tuple 리턴 전체적으로는 리스트 형태[(), ()]
+d.clear() 모든 요소 제거, 초기화
+
+menu={"Americano": 2000, "Cafe latte": 2500, "Green Tea Latte": 3000, "Mocha Latte":3500}
+if "Americano" in menu: # or if "Americano" in menu.keys():
+	print("아메리카노 있음: 가격 %s원"%(menu["Americano"]))
+else:
+	print("해당 메뉴는 없습니다.")
+
+if "Vanila latte" in menu: # or if "Americano" in menu.keys():
+	print("아메리카노 있음: 가격 %s원"%(menu["Vanila latte"]))  (만약에 if문 없었으면 에러남 바닐라 없어서.)
+else:
+	print("해당 메뉴는 없습니다.")
+
+stationery={"연필": 200, "펜": 800, "지우개": 500, "자":300}
+stationery_list=list(stationery.values())
+print(stationery.values())	([200, 800, 500, 300])
+print(stationery_list)		[200, 800, 500, 300]
+
+*Dictionary 정리================================
+*딕셔너리 생성 및 항목 추가-------------------------
+dic1={"가":"파이썬"} 생성과 동시에 항목 추가(키값:value값 쌍으로 이루어진 항목)
+dic2={} 공백 딕셔너리 생성, dic2=dict() dict함수를 이용하여 공백 딕셔너리 생성 가능
+list=[], list()
+tuple=(), tuple()
+s=set()
+(set={} 이렇게 하면 딕셔너리로 인식되서 쓰면 안됨. 그렇게 출력도 안됨.)
+dictionary={}, dict()
+-공백 딕셔너리 생성 후 항목 추가
+dic2["가"]="파이썬" 키값을 인덱스 위치에, value 값을 대입 연산자 오른쪽에 작성
+(리스트는 무조건 함수로 항목 추가 가능, 대입연산자 안됨.)
+-주의:
+dic1={"가":"파이썬","가":"C프로그래밍"}
+출력결과 -> {"가":"C프로그래밍"}  (인덱스 같으면 하나만 남음. value는 랜덤으로 남음)
+-생성과 동시에 항목 추가 시 동일한 키값을 갖는 경우 중복 저장 되지 않음
+dic2={}
+dic2["가"]="파이썬"
+dic2["가"]="C프로그래밍" #키값이 동일하여 중복 저장이 되지 않으므로 두번째 값으로 value값 변경
+=> 공백 딕셔너리 생성 후 동일한 키값으로 재저장 시 덮어쓰기 (value값 수정)
+-key 에 리스트 사용 불가, value 에는 아무 자료형이나 상관 없음
+
+
+*딕셔너리 항목 삭제----------------------------------
+dec dic1["가"] #[] 안에는 키값이 들어감. 키 value 다 삭제.
+del(dic1["가"]) 와 같이 함수 형태로 작성도 가능
+-해당 키값이 없는 경우 에러 발생
+if "가" in dic1: 
+	del dic1["가"]
+if "가" in dic1.keys(): 가능
+dic1.pop(킷값) : 킷값에 해당하는 항목(킷값:value값 쌍)을 삭제 및 value값만 반환
+dic1.clear() : key와 value 모두 삭제(전체 삭제)
+
+
+* 딕셔너리 key, value 추출 ----------------------------
+- 딕셔너리.keys() #킷값들만 추출, index 사용 불가, 시퀀스 형태이긴 함.(나열)	dict_keys(['가', '나', '다'])
+- 딕셔너리.values() #value값들만 추출, index 사용 불가
+- 딕셔너리.items() #킷값과 value값의 쌍을 튜플로 만들어 추출
+주의: 형태는 시퀀스 형태로 리스트처럼 보이지만 실제 리스트는 아님
+(시퀀스 형태이기 때문에 반복문에서 사용은 가능) 
+- 리스트가 아니기 때문에 인덱싱이나 리스트와 관련된 함수를 사용하지 못함(append, insert, count 등) 
+- 리스트 관련 함수를 사용하기 위해서는 list() 함수를 이용하여 리스트로 변환하여 사용
+li=list(dic1.keys()) 이런식으로.
+- get 함수
+- 딕셔너리.get(킷값) => 킷값에 해당하는 value값을 반환, 해당 킷값이 없는 경우 None을 반환(파이썬 특수)
+- 딕셔너리.get(킷값, default_value) => 해당 킷값이 없는 경우 default_value값을 반환
+
+문제
+카페 메뉴 딕셔너리 항목 5개
+키보드 메뉴 입력받기
+입력한 메뉴가 있으면 가격 출력, 없으면 없다 출력
+키보드 가격 입력받기
+가격이 있으면 메뉴 이름 출력 , 없으면 없다 출력
+menu={"아메리카노":2000, "카페라떼":2500, "바닐라라떼":3000, "카페모카":3500, "카라멜마키아또":4000}
+
+a=input("메뉴: ")
+if a in menu.keys():
+	print("%s 메뉴는 %s 원입니다."%(a, menu[a]))
+else:
+	print("없다.")
+
+b=input("가격:")
+klist=list(menu.keys())
+vlist=list(menu.values())
+print(klist)
+print(vlist)
+if b in menu.values():
+	n=vlist.index(b)
+	print("%s원 메뉴가 있습니다."%(b))
+	print("메뉴는 %s입니다."%(klist[n]))
+	print(menu[b])
+else:
+	print("없다.")
+
+
+문제) 다음 조건에 맞도록 프로그램 작성하시오
+과일가게에서 과일을 팔기 위해 부족한 과일을 더 들여오기로 함.
+현재 과일가게는이럼
+배(2000) 3개, 사과(1500) 5개, 딸기 (1800) 2개, 참외 (2300) 5개
+5개 미만인 과일들은 부족한 개수만큼 5개로 채워넣기.
+어떤 과일이 몇개 채워져야 하며 비용이 얼마나 드는지 출력해보기.
+딕셔너리에 저장할 때는 {"배": [2000,3], ...} 형태로 저장한다. 
+출력 예)
+배: 2개 필요( 4000원 지출 예정)
+딸기: 3개 필요(5400원 지출 예정)
+
+fruit={"배": [2000,3], "사과":[1500, 5], "딸기":[1800, 2], "참외": [2300, 5]}
+klist=list(fruit.keys())
+vlist=list(fruit.values())	[[2000,3],[1500,5],...]
+if vlist[0][1]<5:
+	n1=5-vlist[0][1]
+	n2=vlist[0][0]*n1
+	print("%s: %s개 필요 (%s원 지출 예정)"%(klist[0],n1,n2)
+if vlist[1][1]<5:
+	n1=5-vlist[1][1]
+	n2=vlist[1][0]*n1
+	print("%s: %s개 필요 (%s원 지출 예정)"%(klist[1],n1,n2)
+if vlist[2][1]<5:
+	n1=5-vlist[2][1]
+	n2=vlist[2][0]*n1
+	print("%s: %s개 필요 (%s원 지출 예정)"%(klist[2],n1,n2)
+if vlist[3][1]<5:
+	n1=5-vlist[3][1]
+	n2=vlist[3][0]*n1
+	print("%s: %s개 필요 (%s원 지출 예정)"%(klist[3],n1,n2)
+
+(elif 사용하면 안돼요.)
+
+
+
+파이썬 반복문 두가지
+1. 조건 제어 while
+2. 횟수 제어 for
+
+while 조건이 참인동안 반복
+조건이 거짓되면 끝.
+
+초기식a=0
+while 조건식 a<10:
+	문장(다 들여쓰기 하기)
+	증감식a+=1
+num=0
+while num<=10:
+	num+=2
+	print(num)	2 4 6 8 10 12까쥐.
+
+num=int(input"수:"))
+sum=0
+step=0 #초기식
+while(step<=num): #조건식
+ 	sum+=step
+	print(sum)
+	step+=1 #증감식
+print(sum)
+
+n, step, sum1= 5, 0, 2
+while step<=n:
+	sum+=step
+	step+=1
+print(sum)
+
+li=['a','b','c','d']
+n=0
+while n<len(li):
+	print(li[n])
+	n+=1
+
+무한루프(조건식 항상 참)(while True:(초기식, 증감식 필요 없다.) 
+ㄴbreak문 반복문 강제 종료
+
+while 조건:
+	code_block
+	if(break) 조건:
+		break
+break 조건 참이 되면 중단.
+while 조건 거짓이 되면 중단.
+
+n=0
+while(n<=10):
+	n+=1
+	if n==5:
+		break
+	print(n)		1234
+
+if n>=4:
+	break ( break는 반복문 안에서만 사용 가능, if는 조건문)
+elif n >=10:
+	print(n)
+
+n=0
+while(n<=10):
+	n+=1
+	break
+	print(n)-> 안쓰여짐.
+
+
+while True:
+	n=int(input("수 입력:"))
+	if n==0:
+		print("EXIT")
+		break
+	elif n%2==0:
+		print(n,"은 짝수")
+	else:
+		print(n,"은 홀수")
+
+무한루프 아니게 가능
+m=1 초기식
+while m!=0 조건식:  
+	m=int(input("수 입력:") 증감식
+	if m==0:
+		print("EXIT")
+		break
+	elif m%2==0:
+		print(m,"은 짝수")
+	else:
+		print(m,"은 홀수")
+
+sum1=0
+n=0
+while sum	1<=1000:
+	n+=1
+	sum1+=n
+print(sum1, n)
+
+n=45
+
+while True:
+	n=int(input("입력:"))
+	if n==0:
+		break
+	print(n)
+
+문제
+문자열 하나를 입력받는다.
+입력된 문자열의 길이만큼 반복하면서 입력된 문자열이 한글자씩 추가되며 출력하도록 한다. 
+출력 예)
+문자열 입력: string
+s
+st
+str
+stri
+strin
+string
+
+str1=input("문자열 입력:")
+strlen=len(str1)
+i=1
+while i<=strlen:
+	print(str1[:i])  (슬라이싱은 i전까지.)
+	i+=1
+
+문제) 다음 조건에 맞도록 프로그램을 작성하시오.
+랜덤으로 5~20 사이의 수 2개를 결정한다.(수 2개는 동일하면 안된다.)
+결정된 두 수 사이의 수들 중 홀수들의 합을 구하여 출력.
+import random
+while True:
+	n1=random.randint(5,20)
+	n2=random.randint(5,20)
+	if n1!=n2:
+		break
+if n1>n2: #n1이 더 크면 교환
+	temp = n1
+	n1=n2
+	n2=temp
+
+sum1=0
+while n1<=n2:
+	if n1%2!=0: 	#n1%2==1
+		print(n1, end=" ")
+		sum1+=n1
+	n1+=1
+print()
+print("합:", sum1)
+
+
+
+
+반복문 ( 조건제어 while문, 횟수제어 for문)
+for
+반복의 횟수나 범위를 미리 알고 있을 경우
+for 변수 in 시퀀스:
+시퀀스: range(num), 리스트, 튜플, 딕셔너리, 문자열
+
+range([start, ]stop[, step])
+start 포함, stop은 제외
+int형만 쓸 수 있따. 
+step은 0 불가능. 생략하면 자동 1.
+stop 생략 불가능.
+
+range(1,20,3) = range(1,21,3) = range(1,22,3)
+list( range(30,1,-7) )=[30,23,16,9,2]  ( 1 제외임.)
+
+
+import random
+
+n=random.sample(range(5,21),2)
+sample은 중복이 없고 리스트로 반환한다. 
+
+if n[0]>n[1]: #n1이 더 크면 교환
+	temp = n[0]
+	n[0]=n[1]
+	n[1]=temp
+
+sum1=0
+while n[0]<=n[1]:
+	if n[0]%2!=0: 	#n[0]%2==1
+		print(n[0], end=" ")
+		sum1+=n[0]
+	n[0]+=1
+print()
+print("합:", sum1)
+
+for i in 시퀀스:
+for i in range(정수):
+for i in 리스트:
+for i in 튜플:
+for i in 딕셔너리:
+for i in 집합자료형:
+for i in dic1.keys():
+for i in dic1.values():
+for i, j in dic1.items():
+for i in 문자열:
+
+for i in range(10);
+	print(i, end=" ")	0 1 2 3 4 5 6 7 8 9
+print()	
+for i in [1,2,3,4,5];
+	print(i, end=" ")	1 2 3 4 5
+print()
+for i in (1,2,3,4,5);
+	print(i, end=" ")	1 2 3 4 5
+print()
+dic1={"가":"C언어", "나":"파이썬"}
+for i in dic1;
+	print(i, end=" ")	가 나
+print()
+for i in dic1.keys();
+	print(i, end=" ")	가 나
+print()
+for i in dic1.values();
+	print(i, end=" ") 	C언어 파이썬
+print()
+for i, j in dic1.items();
+	print(i,j, end=" ")	가 C언어 나 파이썬
+print()
+for i in "Good Luck":
+	print(i, end=" ")	G o o d   L u c k
+print()
+for i in {1, 2, 3, 4}:
+	print(i, end=" ")	1 2 3 4(Set 은 순서 바뀔수도.)
+print()
+
+
+#문자열 입력 후 문자열 길이만큼 반복
+n=int(input("문자열 입력:"))
+for i in range(len(n)):
+	print("You did a good job!")
+
+for number in range(3):
+	print(number)
+
+
+names=["홍길동","이수지", "강민우"]
+
+index=0
+for name in names:
+	print("%s: 힘내세요! " + %(index)+name+"씨")	힘내세요! 홍길동씨
+	index+=1
+
+for index in range(len(names)):
+	print("%s: 힘내세요: "%(index)+names[index]+씨")
+
+
+word_list=["scramble","kindly","do","learn"]
+for i in range(len(word_list)):
+	word_list[i]="un"+word_list[i]	(word_list[i]+="un" 하면 뒤에 붙음)
+print(word_list)	unscramble unkindly undo unlearn
+
+
+s = "abcde"
+for i in range(len(s)):
+	print(str(i+1)+"번째 알파벳은 "+s[i])
+
+s = "abcde"
+for i in range(1, len(s)+1):
+	print(str(i)+"번째 알파벳은 "+s[i-1])
+
+
+for spelling in'PYTHON_SPELLING':
+	print(spelling, end="*")	P*Y*T*....
+
+팩토리얼
+n=int(input"수 입력" ))
+fact=1
+for i in range(1, n+1):
+	fact*=i
+print("%s! = %s"%(n, fact))
+
+
+반복문과 조건문 혼용 가능.
+for문에서도 break 사용 가능
+
+10부터 19까지 짝수
+for num in range(10, 20):
+	if num%2==0
+		print(num, 'is a even number')
+
+mixlist=['apple', 5, 'banana', 'grape', 3, 8, 6, 'melon']
+for i in mixlist:
+	if type(i) == str:
+		print(i, ": 문자열")
+	elif type(i)==int:
+		print(i,":정수")
+	
+
+for num in range(10, 20):
+	if(num%2==0) and (num%3==0):
+		print('6 x', num/6, '=', num)	6 x 0.2 = 12 이런식
+
+
+반복문 중첩 가능(문제 안내려고 함)
+
+
+*리스트 관련 추가 내용 ========================
+*리스트 생성
+alist=list(range(10))
+alist=[0,1,2,3,4,5,6,7,8,9]
+*리스트 컴프리헨션(comprehension)
+alist=[저장요소 반복문]: 저장요소와 반복문 사이에 ,(콤마)가 들어가지 않고 공백이 들어감. 반복문 끝에 :(콜론) 없음
+ex) 
+alist=[random.randint(1, 10) for i in range(10)]: 10개의 랜덤값이 추출되어 요소로 저장되면서 리스트를 생성
+
+alist=[]
+for i in range(10):
+	alist.append(random.randint(1, 10))
+
+
+문제)
+리스트에 어떤 과목에 대한 학생 20명의 점수가 있다. 
+점수는 랜덤으로 결정되도록 하고, 50~100 사이의 값이 저장되도록 한다.
+점수가 70점 이상이 되는 학생은 이 과목을 pass 하고 그렇지 않은 학생들은 fail이 된다. 
+누가 pass를 하고 (인덱스 번호와 점수를 같이 출력) 총 몇 명이 pass를 하는 지 출력해보시오. 
+
+import random
+list=[random.randint(50,100) for i in range(20)]
+count=0
+for i in range(len(list)):
+	if list[i]>=70:
+		print("%s는 %s로패스"%(i, list[i]))
+		count+=1
+print("총 %s명이 pass"%(count))
+
+같은내용
+
+import random
+list=[random.randint(50,100) for i in range(20)]
+count=0
+index=0
+for i in list:
+    if i>=70:
+        print("%s는 %s로패스"%(index, i))
+        count+=1
+        index+=1
+    else:
+        index+=1
+print("총 %s명이 pass"%(count))
+
+
+문제)
+학생들의 어떤 과목 점수를 딕셔너리로 저장하려 한다. 
+학생 수는 20명이며 key로 학번(std1~std20)을 사용하고, value로는 과목점수(랜덤 50~100 사이의 값)를 저장할 것이다. (ex. {"std1":75, "std2":98, "std3":61,...}
+점수가 70점 이상인 경우 학생의 학번과 점수를 출력한다. 
+70점 이상의 학생들이 총 몇명인지 출력한다. 
+전체 평균이 몇인지 소수점 2째자리까지 출력한다. 
+import random
+dic1={}
+for i in range(1, 21):
+	dic1["std"+str(i)]=random.randint(50,100)
+count=0
+sum=0
+for i, j in in dic1.items():
+	sum+=j
+	if j>=70:
+		print("%s: %s"%(i, j))
+		count+=1
+print("70 점 이상 학생 수: %s명"%count)
+print("전체 평균: %.2f"%(sum/len(jdic)))
+
+
+문제
+사고자하는 품목 5개 받아서 리스트에 저장
+입력 시 이미 리스트에 있는 품목인 경우 다시 입력받기
+구매한 품목 3개 입력받아 딕셔너리에 저장한다.(key는 0, 1, 2, value는 입력값)
+사고자 하는 품목 리스트와 구매한 품목 딕셔너리를 이용하여 아직 구매하지 못한 품목을 출력하시오. (set 이용 차집합)
+
+buylist = []
+n = 0
+while n < 5:
+ buyitem = input("사고자 하는 품목 입력: ")
+ if buyitem not in buylist: #입력값이 리스트에 없다면 추가
+ buylist.append(buyitem)
+ n += 1
+ else:
+ print("이미 있는 품목입니다.")
+print(buylist) #확인용
+buydic = {}
+i = 0
+while i < 3:
+ buyitem = input("구매한 품목을 입력: ")
+ if buyitem not in buydic.values(): #입력값이 딕셔너리에 없다면 추가
+ buydic[i] = buyitem
+ i += 1
+ else:
+ print("이미 구매 내역에 있습니다.")
+print(buydic) #확인용
+print("아직 구매하지 않은 품목")
+buyitems = set(buylist) - set(buydic.values())
+#set 자료형을 이용하여 차집합 구함
+print(buyitems)
+
+
+합이 50미만.
+
+
+
+
+
+
+
+
+
+함수이름 -> 변수명 규칙이랑 같다. 
+a      'a'       a()    3     '3'
+변수 문자열 함수 상수 문자열
+매개변수 def func(num):
+인수, 인자값 b=fun(3)
+return- 반환, 함수 종료
+return 만 쓸수도(함수 종료)
+return 변수 여러개 가능.
+
+함수정의
+def f(x):
+	result=x*x+x+1
+	return result
+
+호출(메인파트)
+print(f(2))
+
+return이 있는 함수는 식으로 호출 가능
+
+''' 문자열 여러줄 ''' 주석처럼!!
+
+def maxlist(nlist):
+	#m=max(nlist)
+	m=0
+	for i in nlist:
+		if m < i:
+			m=i
+	return m
+
+변수 스택 
+변수는 함수에 넣어질때 아예 다른 변수 생성임.
+리스트 힙 
+리스트는 함수에 넣어질때 원래 리스트에 새로운 이름을 붙여주는 형태, 따라서 원래 리스트에도 영향 줌.
+
+함수 안 생성된 변수 = 지역변수
+함수 밖 생성된 변수 = 전역변수
+매개변수 - 지역변수. 
+변수 생성 -> 대입연산자 사용. 
+
+nlist=nlist+[n] 리스트에 요소추가
+대신 위와 같이 대입연산자를 사용하면 지역변수가 되어 별개의 리스트가 됨. 
+
+근데 nlist.append(n) 쓰면 원래 리스트에도 영향 줌.
+이유는 대입연산자를 안 써서. 
+
+import random
+def dec_food():
+	coin=random.choice(["앞", "뒤"])
+	print("코인: "+coin)
+	if coin == "앞":
+		print("중국 요리")
+	else:
+		print("일본 요리")
+
+dec_food()
+
+def concate_str1(str1, str2):
+	return str1+str2
+
+def concate_str2(str1, str2):
+	print(str1+str2)	
+
+print(concate_str1("Hi~", "How are you?"))
+concate_str2("Hi~", "How are you?")
+
+
+* 함수 정리
+- 매개변수 없고, 반환 없음
+- 매개변수 있고, 반환 없음
+- 매개변수 없고, 반환 있음
+- 매개변수 있고, 반환 있음
+return 문을 가지고 있으면 반환이 있다는 의미
+단, return 값 과 같은 형태라면 값을 반환하면서 함수를 종료하는 의미이며
+return 만 있는 형태라면 함수만 종료시키는 의미
+ㄴ return 으로 종료되면 그 밑에 명령문 수행 X
+ㄴreturn 대신 break 쓰면 그 밑에 명령문 수행 O
+ㄴ break는 반복문만 종료.
+return 값1, 값2 : 값을 여러 개 반환 가능
+
+함수 정의
+def 함수명([매개변수1, 매개변수2, ...]):
+명령문1
+명령문2
+...
+[return 값1, 값2, ...]
+1.
+def 함수명():
+명령문
+2.
+def 함수명(매개변수1, 매개변수2, ...):
+명령문
+3.
+def 함수명():
+명령문
+return 값1, 값2, .. 
+4.
+def 함수명(매개변수1, 매개변수2, ...):
+명령문
+return 값1, 값2, ...
+
+입력한 값이 0이면 거짓, 아니면 참을 출력하는 프로그램
+매개변수 반환 모두 없음
+def print_tf1():
+	num=int(input("값 입력:")
+	if num==0
+		print("거짓")
+	else:
+		print("참")
+
+print_tf1()
+
+매개변수 있고 반환 없음
+def print_tf2(num):
+	if num==0:
+		print("거짓")
+	else:
+		print("참")
+
+n=int(input("입력:"))
+print_tf2(n)
+
+매개변수는 없고, 반환은 있다.
+def print_tf3v1():
+	num=int(input("값 입력:"))
+	return num
+
+def print_tf3v2():
+	num=int(input("값 입력:"))
+	if num == 0:
+		return "거짓"
+	else:
+		return "참"
+
+n=print_tf3v1()
+if n == 0:
+	print("거짓")
+else:
+	print("참")
+
+print(print_tf3v2())
+
+매개변수 있고 반환 있음
+def print_tf4(num):
+	if num==0:
+		return "거짓"
+	else:
+		return "참"
+
+n=int(input("값 입력:"))
+print(print_tf4(n))
+
+문제) 다음 조건에 맞도록 프로그램을 작성하시오. - 키보드로 두 수를 입력받고 반환하는 함수를 만든다. - 추출할 개수도 입력받고, 앞에서 입력한 두 수 사이의 랜덤값을 추출하여 리스트에 저장한다. 두 수 크기가 바뀌어도 잘 동작하도록 해야 한다.(함수) - 리스트에 저장한 내용을 모두 출력하되, 한 라인에 10개씩 출력되도록 한다.(함수) - 계속 할 것인지 묻고, n을 입력하면 종료하도록 한다.(main part)
+
+import random
+
+def input_two_num():
+	num1 = int(input("수1 입력: "))
+	 num2 = int(input("수2 입력: "))
+	 return num1, num2 #두 수를 반환
+
+def rand_list(n1, n2):
+	 if n1 > n2: #n1이 더 큰 값이면 교환
+		 temp = n1
+		 n1 = n2
+		 n2 = temp
+	 ran_num = int(input("추출할 개수를 입력: "))
+	 num_list = [random.randint(n1, n2) for i in range(ran_num)] #리스트 컴프리헨션 방법을 사용함
+	## 아래 #이 있는 부분은 리스트 컴프리헨션 방법을 사용하지 않았을 때의 방법임
+	## num_list = []
+	## for i in range(ran_num):
+	## num_list.append(random.randint(n1, n2))
+	 return num_list
+
+def list_print(rlist):
+	 for i in range(len(rlist)):
+		 print("%4s"%(rlist[i]), end="")
+		 if (i+1) % 10 == 0: #한 라인에 10개씩 출력하기 위함
+			 print()
+	 print()
+		
+while True:
+ 	n1, n2 = input_two_num() #키보드로 두 수를 입력받고 두 수를 반환
+	 rand_list = random_num(n1, n2) #두 수 사이의 랜덤값을 추출하여 리스트에 저장하고 반환
+	 list_print(rand_list) #리스트 내용을 모두 출력
+	 again = input("계속 하시겠습니까?(y/n): ")
+	 if again == "n":
+		 print("종료합니다.")
+		 break
